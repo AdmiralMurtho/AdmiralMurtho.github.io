@@ -5205,15 +5205,15 @@ var $elm$core$Task$perform = F2(
 				A2($elm$core$Task$map, toMessage, task)));
 	});
 var $elm$browser$Browser$element = _Browser_element;
-var $author$project$Main$GET = function (a) {
+var $author$project$HomePage$GET = function (a) {
 	return {$: 'GET', a: a};
 };
-var $author$project$Main$Paused = F4(
+var $author$project$HomePage$Paused = F4(
 	function (a, b, c, d) {
 		return {$: 'Paused', a: a, b: b, c: c, d: d};
 	});
-var $author$project$Main$SLL = {$: 'SLL'};
-var $author$project$Main$UpdateViewport = function (a) {
+var $author$project$HomePage$SLL = {$: 'SLL'};
+var $author$project$HomePage$UpdateViewport = function (a) {
 	return {$: 'UpdateViewport', a: a};
 };
 var $elm$browser$Browser$Dom$getViewport = _Browser_withWindow(_Browser_getViewport);
@@ -5280,19 +5280,19 @@ var $author$project$SLL$InitGameStats$noExtraNode = {
 			}
 		})
 };
-var $author$project$Main$init = _Utils_Tuple2(
+var $author$project$HomePage$init = _Utils_Tuple2(
 	A4(
-		$author$project$Main$Paused,
-		$author$project$Main$SLL,
-		$author$project$Main$GET('Testcode'),
+		$author$project$HomePage$Paused,
+		$author$project$HomePage$SLL,
+		$author$project$HomePage$GET('Testcode'),
 		$author$project$SLL$InitGameStats$noExtraNode,
 		$elm$core$Maybe$Nothing),
-	A2($elm$core$Task$perform, $author$project$Main$UpdateViewport, $elm$browser$Browser$Dom$getViewport));
-var $author$project$Main$NewWindowSize = F2(
+	A2($elm$core$Task$perform, $author$project$HomePage$UpdateViewport, $elm$browser$Browser$Dom$getViewport));
+var $author$project$HomePage$NewWindowSize = F2(
 	function (a, b) {
 		return {$: 'NewWindowSize', a: a, b: b};
 	});
-var $author$project$Main$Tick = {$: 'Tick'};
+var $author$project$HomePage$Tick = {$: 'Tick'};
 var $elm$core$Platform$Sub$batch = _Platform_batch;
 var $elm$time$Time$Every = F2(
 	function (a, b) {
@@ -5926,7 +5926,7 @@ var $elm$browser$Browser$Events$onResize = function (func) {
 				A2($elm$json$Json$Decode$field, 'innerWidth', $elm$json$Json$Decode$int),
 				A2($elm$json$Json$Decode$field, 'innerHeight', $elm$json$Json$Decode$int))));
 };
-var $author$project$Main$subscriptions = function (model) {
+var $author$project$HomePage$subscriptions = function (model) {
 	if (model.$ === 'Running') {
 		var timeIntervall = model.d;
 		var maybeWindowSize = model.e;
@@ -5937,12 +5937,12 @@ var $author$project$Main$subscriptions = function (model) {
 					$elm$time$Time$every,
 					timeIntervall,
 					function (_v1) {
-						return $author$project$Main$Tick;
+						return $author$project$HomePage$Tick;
 					}),
 					$elm$browser$Browser$Events$onResize(
 					F2(
 						function (width, height) {
-							return A2($author$project$Main$NewWindowSize, width, height);
+							return A2($author$project$HomePage$NewWindowSize, width, height);
 						}))
 				]));
 	} else {
@@ -5952,19 +5952,19 @@ var $author$project$Main$subscriptions = function (model) {
 					$elm$browser$Browser$Events$onResize(
 					F2(
 						function (width, height) {
-							return A2($author$project$Main$NewWindowSize, width, height);
+							return A2($author$project$HomePage$NewWindowSize, width, height);
 						}))
 				]));
 	}
 };
-var $author$project$Main$ADD = function (a) {
+var $author$project$HomePage$ADD = function (a) {
 	return {$: 'ADD', a: a};
 };
 var $author$project$SVG$Arrows$NO = {$: 'NO'};
-var $author$project$Main$REMOVE = function (a) {
+var $author$project$HomePage$REMOVE = function (a) {
 	return {$: 'REMOVE', a: a};
 };
-var $author$project$Main$Running = F5(
+var $author$project$HomePage$Running = F5(
 	function (a, b, c, d, e) {
 		return {$: 'Running', a: a, b: b, c: c, d: d, e: e};
 	});
@@ -6007,7 +6007,7 @@ var $elm$core$Maybe$andThen = F2(
 			return $elm$core$Maybe$Nothing;
 		}
 	});
-var $author$project$Main$maybeUpdateviewPort = F3(
+var $author$project$HomePage$maybeUpdateviewPort = F3(
 	function (maybeViewP, width, height) {
 		var updateViewPort = F2(
 			function (viewData, viewPort) {
@@ -6388,7 +6388,7 @@ var $author$project$SVG$SLL$RemoveAnimation$removeAnimation = F2(
 		}
 	});
 var $elm$core$Debug$todo = _Debug_todo;
-var $author$project$Main$recalcRunningModel = F6(
+var $author$project$HomePage$recalcRunningModel = F6(
 	function (msg, dataStruc, method, data, intervall, viewP) {
 		var getnodeList = data.nodeList;
 		var getextraNode = data.extraNode;
@@ -6404,7 +6404,7 @@ var $author$project$Main$recalcRunningModel = F6(
 				} else {
 					var _v3 = _v1.a;
 					return _Debug_todo(
-						'Main',
+						'HomePage',
 						{
 							start: {line: 104, column: 21},
 							end: {line: 104, column: 31}
@@ -6432,9 +6432,9 @@ var $author$project$Main$recalcRunningModel = F6(
 			case 'GETMsg':
 				return _Utils_Tuple2(
 					A5(
-						$author$project$Main$Running,
+						$author$project$HomePage$Running,
 						dataStruc,
-						$author$project$Main$GET('Testcode für GET'),
+						$author$project$HomePage$GET('Testcode für GET'),
 						data,
 						intervall,
 						viewP),
@@ -6442,9 +6442,9 @@ var $author$project$Main$recalcRunningModel = F6(
 			case 'ADDMsg':
 				return _Utils_Tuple2(
 					A5(
-						$author$project$Main$Running,
+						$author$project$HomePage$Running,
 						dataStruc,
-						$author$project$Main$ADD('Testcode für ADD'),
+						$author$project$HomePage$ADD('Testcode für ADD'),
 						data,
 						intervall,
 						viewP),
@@ -6452,9 +6452,9 @@ var $author$project$Main$recalcRunningModel = F6(
 			case 'REMOVEMsg':
 				return _Utils_Tuple2(
 					A5(
-						$author$project$Main$Running,
+						$author$project$HomePage$Running,
 						dataStruc,
-						$author$project$Main$REMOVE('Testcode für REMOVE'),
+						$author$project$HomePage$REMOVE('Testcode für REMOVE'),
 						data,
 						intervall,
 						viewP),
@@ -6462,7 +6462,7 @@ var $author$project$Main$recalcRunningModel = F6(
 			case 'Tick':
 				return _Utils_Tuple2(
 					A5(
-						$author$project$Main$Running,
+						$author$project$HomePage$Running,
 						dataStruc,
 						method,
 						A2($author$project$SVG$SLL$RemoveAnimation$removeAnimation, data, getAnimationIndex),
@@ -6473,7 +6473,7 @@ var $author$project$Main$recalcRunningModel = F6(
 				var newViewP = msg.a;
 				return _Utils_Tuple2(
 					A5(
-						$author$project$Main$Running,
+						$author$project$HomePage$Running,
 						dataStruc,
 						method,
 						data,
@@ -6485,32 +6485,32 @@ var $author$project$Main$recalcRunningModel = F6(
 				var height = msg.b;
 				return _Utils_Tuple2(
 					A5(
-						$author$project$Main$Running,
+						$author$project$HomePage$Running,
 						dataStruc,
 						method,
 						data,
 						intervall,
-						A3($author$project$Main$maybeUpdateviewPort, viewP, width, height)),
+						A3($author$project$HomePage$maybeUpdateviewPort, viewP, width, height)),
 					$elm$core$Platform$Cmd$none);
 			case 'Play':
 				return _Utils_Tuple2(
-					A5($author$project$Main$Running, dataStruc, method, data, intervall, viewP),
+					A5($author$project$HomePage$Running, dataStruc, method, data, intervall, viewP),
 					$elm$core$Platform$Cmd$none);
 			case 'Pause':
 				return _Utils_Tuple2(
-					A4($author$project$Main$Paused, dataStruc, method, data, viewP),
+					A4($author$project$HomePage$Paused, dataStruc, method, data, viewP),
 					$elm$core$Platform$Cmd$none);
 			case 'UpdateIndex':
 				var index = msg.a;
 				return _Utils_Tuple2(
-					A5($author$project$Main$Running, dataStruc, method, data, intervall, viewP),
+					A5($author$project$HomePage$Running, dataStruc, method, data, intervall, viewP),
 					$elm$core$Platform$Cmd$none);
 			default:
-				return $author$project$Main$init;
+				return $author$project$HomePage$init;
 		}
 	});
 var $author$project$Config$speed = 10;
-var $author$project$Main$highlightNode = F2(
+var $author$project$HomePage$highlightNode = F2(
 	function (node, index) {
 		if (node.$ === 'Node') {
 			var content = node.a.content;
@@ -6522,21 +6522,21 @@ var $author$project$Main$highlightNode = F2(
 					arrow: arrow,
 					content: content,
 					highlighted: true,
-					next: A2($author$project$Main$highlightNode, next, index - 1),
+					next: A2($author$project$HomePage$highlightNode, next, index - 1),
 					position: position
 				}) : $author$project$SVG$SLL$SLLNodes$Node(
 				{
 					arrow: arrow,
 					content: content,
 					highlighted: false,
-					next: A2($author$project$Main$highlightNode, next, index - 1),
+					next: A2($author$project$HomePage$highlightNode, next, index - 1),
 					position: position
 				});
 		} else {
 			return $author$project$SVG$SLL$SLLNodes$Empty;
 		}
 	});
-var $author$project$Main$updateIndex = F2(
+var $author$project$HomePage$updateIndex = F2(
 	function (gs, index) {
 		var getIntIndex = function () {
 			var _v0 = $elm$core$String$toInt(index);
@@ -6553,33 +6553,33 @@ var $author$project$Main$updateIndex = F2(
 			gs,
 			{
 				animation: {index: getIntIndex, state: gs.animation.state},
-				nodeList: A2($author$project$Main$highlightNode, gs.nodeList, getIntIndex)
+				nodeList: A2($author$project$HomePage$highlightNode, gs.nodeList, getIntIndex)
 			});
 	});
-var $author$project$Main$recalcRunningPaused = F5(
+var $author$project$HomePage$recalcRunningPaused = F5(
 	function (msg, dataStruc, method, data, viewP) {
 		switch (msg.$) {
 			case 'GETMsg':
 				return _Utils_Tuple2(
-					A4($author$project$Main$Paused, dataStruc, method, data, viewP),
+					A4($author$project$HomePage$Paused, dataStruc, method, data, viewP),
 					$elm$core$Platform$Cmd$none);
 			case 'ADDMsg':
 				return _Utils_Tuple2(
-					A4($author$project$Main$Paused, dataStruc, method, data, viewP),
+					A4($author$project$HomePage$Paused, dataStruc, method, data, viewP),
 					$elm$core$Platform$Cmd$none);
 			case 'REMOVEMsg':
 				return _Utils_Tuple2(
-					A4($author$project$Main$Paused, dataStruc, method, data, viewP),
+					A4($author$project$HomePage$Paused, dataStruc, method, data, viewP),
 					$elm$core$Platform$Cmd$none);
 			case 'Tick':
 				return _Utils_Tuple2(
-					A4($author$project$Main$Paused, dataStruc, method, data, viewP),
+					A4($author$project$HomePage$Paused, dataStruc, method, data, viewP),
 					$elm$core$Platform$Cmd$none);
 			case 'UpdateViewport':
 				var newViewP = msg.a;
 				return _Utils_Tuple2(
 					A4(
-						$author$project$Main$Paused,
+						$author$project$HomePage$Paused,
 						dataStruc,
 						method,
 						data,
@@ -6590,35 +6590,35 @@ var $author$project$Main$recalcRunningPaused = F5(
 				var height = msg.b;
 				return _Utils_Tuple2(
 					A4(
-						$author$project$Main$Paused,
+						$author$project$HomePage$Paused,
 						dataStruc,
 						method,
 						data,
-						A3($author$project$Main$maybeUpdateviewPort, viewP, width, height)),
+						A3($author$project$HomePage$maybeUpdateviewPort, viewP, width, height)),
 					$elm$core$Platform$Cmd$none);
 			case 'Play':
 				return _Utils_Tuple2(
-					A5($author$project$Main$Running, dataStruc, method, data, $author$project$Config$speed, viewP),
+					A5($author$project$HomePage$Running, dataStruc, method, data, $author$project$Config$speed, viewP),
 					$elm$core$Platform$Cmd$none);
 			case 'Pause':
 				return _Utils_Tuple2(
-					A4($author$project$Main$Paused, dataStruc, method, data, viewP),
+					A4($author$project$HomePage$Paused, dataStruc, method, data, viewP),
 					$elm$core$Platform$Cmd$none);
 			case 'UpdateIndex':
 				var index = msg.a;
 				return _Utils_Tuple2(
 					A4(
-						$author$project$Main$Paused,
+						$author$project$HomePage$Paused,
 						dataStruc,
 						method,
-						A2($author$project$Main$updateIndex, data, index),
+						A2($author$project$HomePage$updateIndex, data, index),
 						viewP),
 					$elm$core$Platform$Cmd$none);
 			default:
-				return $author$project$Main$init;
+				return $author$project$HomePage$init;
 		}
 	});
-var $author$project$Main$update = F2(
+var $author$project$HomePage$update = F2(
 	function (msg, model) {
 		if (model.$ === 'Running') {
 			var dataStruc = model.a;
@@ -6626,19 +6626,19 @@ var $author$project$Main$update = F2(
 			var data = model.c;
 			var intervall = model.d;
 			var viewP = model.e;
-			return A6($author$project$Main$recalcRunningModel, msg, dataStruc, method, data, intervall, viewP);
+			return A6($author$project$HomePage$recalcRunningModel, msg, dataStruc, method, data, intervall, viewP);
 		} else {
 			var dataStruc = model.a;
 			var method = model.b;
 			var data = model.c;
 			var viewP = model.d;
-			return A5($author$project$Main$recalcRunningPaused, msg, dataStruc, method, data, viewP);
+			return A5($author$project$HomePage$recalcRunningPaused, msg, dataStruc, method, data, viewP);
 		}
 	});
-var $author$project$Main$Pause = {$: 'Pause'};
-var $author$project$Main$Play = {$: 'Play'};
-var $author$project$Main$Reset = {$: 'Reset'};
-var $author$project$Main$UpdateIndex = function (a) {
+var $author$project$HomePage$Pause = {$: 'Pause'};
+var $author$project$HomePage$Play = {$: 'Play'};
+var $author$project$HomePage$Reset = {$: 'Reset'};
+var $author$project$HomePage$UpdateIndex = function (a) {
 	return {$: 'UpdateIndex', a: a};
 };
 var $elm$svg$Svg$Attributes$fill = _VirtualDom_attribute('fill');
@@ -6648,7 +6648,7 @@ var $elm$svg$Svg$rect = $elm$svg$Svg$trustedNode('rect');
 var $elm$svg$Svg$Attributes$width = _VirtualDom_attribute('width');
 var $elm$svg$Svg$Attributes$x = _VirtualDom_attribute('x');
 var $elm$svg$Svg$Attributes$y = _VirtualDom_attribute('y');
-var $author$project$Main$areaToSvg = A2(
+var $author$project$HomePage$areaToSvg = A2(
 	$elm$svg$Svg$rect,
 	_List_fromArray(
 		[
@@ -7069,7 +7069,7 @@ var $elm$svg$Svg$svg = $elm$svg$Svg$trustedNode('svg');
 var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
 var $elm$core$Debug$toString = _Debug_toString;
 var $elm$html$Html$Attributes$value = $elm$html$Html$Attributes$stringProperty('value');
-var $author$project$Main$view = function (m) {
+var $author$project$HomePage$view = function (m) {
 	var width = function () {
 		if (m.$ === 'Running') {
 			var vP = m.e;
@@ -7205,7 +7205,7 @@ var $author$project$Main$view = function (m) {
 									]),
 								A2(
 									$elm$core$List$cons,
-									$author$project$Main$areaToSvg,
+									$author$project$HomePage$areaToSvg,
 									_Utils_ap(
 										$author$project$SVG$SLL$SLLNodes$printAllNodes(nodes),
 										$author$project$SVG$SLL$SLLNodes$extraNodeToSvg(extraNodee))))
@@ -7219,7 +7219,7 @@ var $author$project$Main$view = function (m) {
 								$elm$html$Html$button,
 								_List_fromArray(
 									[
-										$elm$html$Html$Events$onClick($author$project$Main$Play)
+										$elm$html$Html$Events$onClick($author$project$HomePage$Play)
 									]),
 								_List_fromArray(
 									[
@@ -7229,7 +7229,7 @@ var $author$project$Main$view = function (m) {
 								$elm$html$Html$button,
 								_List_fromArray(
 									[
-										$elm$html$Html$Events$onClick($author$project$Main$Pause)
+										$elm$html$Html$Events$onClick($author$project$HomePage$Pause)
 									]),
 								_List_fromArray(
 									[
@@ -7239,7 +7239,7 @@ var $author$project$Main$view = function (m) {
 								$elm$html$Html$button,
 								_List_fromArray(
 									[
-										$elm$html$Html$Events$onClick($author$project$Main$Reset)
+										$elm$html$Html$Events$onClick($author$project$HomePage$Reset)
 									]),
 								_List_fromArray(
 									[
@@ -7252,21 +7252,21 @@ var $author$project$Main$view = function (m) {
 										$elm$html$Html$Attributes$placeholder('index'),
 										$elm$html$Html$Attributes$value(
 										$elm$core$String$fromInt(index)),
-										$elm$html$Html$Events$onInput($author$project$Main$UpdateIndex)
+										$elm$html$Html$Events$onInput($author$project$HomePage$UpdateIndex)
 									]),
 								_List_Nil)
 							]))
 					]))
 			]));
 };
-var $author$project$Main$main = $elm$browser$Browser$element(
+var $author$project$HomePage$main = $elm$browser$Browser$element(
 	{
 		init: function (_v0) {
-			return $author$project$Main$init;
+			return $author$project$HomePage$init;
 		},
-		subscriptions: $author$project$Main$subscriptions,
-		update: $author$project$Main$update,
-		view: $author$project$Main$view
+		subscriptions: $author$project$HomePage$subscriptions,
+		update: $author$project$HomePage$update,
+		view: $author$project$HomePage$view
 	});
-_Platform_export({'Main':{'init':$author$project$Main$main(
+_Platform_export({'HomePage':{'init':$author$project$HomePage$main(
 	$elm$json$Json$Decode$succeed(_Utils_Tuple0))(0)}});}(this));
