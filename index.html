@@ -10,13 +10,13 @@
 </head>
 
 <body>
-    <div id="elm-app"></div>
+    <div id="elm-app-is-loaded-here"></div>
+
     <script src="elm.js"></script>
     <script>
-        const elmDiv = document.querySelector('#elm-app');
-        if (elmDiv) {
-            var myApp = Elm.Main.embed(elmDiv);
-        }
+        var app = Elm.HomePage.init({
+            node: document.getElementById("elm-app-is-loaded-here")
+        });      
     </script>
 </body>
 
