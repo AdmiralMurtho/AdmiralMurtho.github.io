@@ -5416,6 +5416,12 @@ var $author$project$Model$GET = F2(
 	function (a, b) {
 		return {$: 'GET', a: a, b: b};
 	});
+var $author$project$Model$HEADING1 = function (a) {
+	return {$: 'HEADING1', a: a};
+};
+var $author$project$Model$HEADING2 = function (a) {
+	return {$: 'HEADING2', a: a};
+};
 var $mdgriffith$elm_ui$Element$Landscape = {$: 'Landscape'};
 var $author$project$Model$Model = F4(
 	function (a, b, c, d) {
@@ -5454,7 +5460,8 @@ var $author$project$Color$ColorScheme$orangeLight = A3($mdgriffith$elm_ui$Elemen
 var $author$project$Color$ColorScheme$orangeModerate = A3($mdgriffith$elm_ui$Element$rgb255, 251, 133, 0);
 var $author$project$Color$ColorScheme$white = A3($mdgriffith$elm_ui$Element$rgb255, 255, 255, 255);
 var $author$project$Color$ColorScheme$dayColorScheme = A8($author$project$Color$ColorScheme$ColorScheme, $author$project$Color$ColorScheme$orangeModerate, $author$project$Color$ColorScheme$orangeLight, $author$project$Color$ColorScheme$blueDark, $author$project$Color$ColorScheme$blueLight, $author$project$Color$ColorScheme$white, $author$project$Color$ColorScheme$greyLight, $author$project$Color$ColorScheme$black, $author$project$Color$ColorScheme$darkGrey);
-var $author$project$SLL$Descriptions$desciptionText = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.';
+var $author$project$SLL$Descriptions$firstText = 'Statt die Methoden einer Liste mit Hilfe eines Arrays zu implementieren, ko ̈nnen wir diese Methoden auch mit Hilfe von Objekten implementieren. Wir betrachten zuerst eine sogenannte einfach verkettete Liste. Eine Liste besteht dabei aus einer Menge von Knoten. Jeder Knoten einer einfach verketteten Liste besteht aus zwei Informationen, dem Element und einer Referenz auf den nächsten Knoten. Ein Knoten einer Liste enthält ein Element und eine Referenz auf den nächsten Knoten. Der Typ des Elementes hängt dabei davon ab, welche Art von Elementen wir in einer Liste ablegen möchten. Wie es Arrays gibt, die Elemente vom Typ Integer enthalten und Arrays, die Elemente vom Typ String enthalten, so gibt es Listen, die Elemente vom Typ Integer enthalten und Listen, die Elemente vom Typ String enthalten. Für eine Liste, die Elemente vom Typ Integer enthält, muss der entsprechende Knoten auch Elemente vom Typ Integer enthalten. Für eine Liste, die Elemente vom Typ String enthält, muss der entsprechende Knoten auch Elemente vom Typ String enthalten. Um auszudrücken, dass der Knoten Werte von verschiedenen Typen enthalten kann, verwenden wir eine generische Klasse. Wir implementieren einen Knoten einer Liste mit Hilfe der folgenden Klasse.';
+var $author$project$SLL$Descriptions$getNodeAt = '\nprivate Node<T> nodeAt(int index) {  \n    Node<T> current = this.first;   \n    for (int i = 0; i < index; i++) {\n        current = current.next;\n    }\n    return current;\n}\n';
 var $elm$browser$Browser$Dom$getViewport = _Browser_withWindow(_Browser_getViewport);
 var $author$project$SLL$Model$Empty = {$: 'Empty'};
 var $author$project$SLL$Model$Node = function (a) {
@@ -5512,8 +5519,11 @@ var $author$project$SLL$InitGameStats$noExtraNode = {
 			}
 		})
 };
+var $author$project$SLL$Descriptions$node = '\npublic class Node<T> {\n    T value;\n    Node<T> next;\n    public Node(T value, Node<T> next) {\n        this.value = value;\n        this.next = next;\n    }\n}\n';
 var $author$project$SLL$Descriptions$removeNode = '\npublic T remove(int index) {\n    T value;\n    if (index == 0) {\n        value = this.head.value;\n        this.head = this.head.next;\n    } else {\n        Node<T> pred = nodeAt(index - 1);\n        value = pred.next.value;\n        pred.next = pred.next.next;\n    }\n}\n';
-var $author$project$SLL$Descriptions$sllist = '\npublic class SLList<T> implements List<T> {\n    privat Node<T> head;\n    public SLLList() {\n        this.head = null;\n    }\n\n    public boolean isEmpty() {\n        return this.head == null;\n    }\n}\n';
+var $author$project$SLL$Descriptions$secondText = 'Die Klasse Node<T> ist eine sogenannte generische Klasse. Das heißt, bei der konkreten Verwendung der Klasse müssen wir für den generischen Parameter T einen Typ angeben. Dieser generische Typ gibt den Typ des Wertes an, der in dem Knoten gespeichert wird. Das heißt, ein Knoten vom Typ Node<Integer> enthält einen Wert vom Typ Integer, während ein Knoten vom Typ Node<String> einen Wert vom Typ String enthält. Eine einfach verkettete Liste besteht dann aus einer Referenz auf den ersten Knoten, also auf ein Objekt vom Typ Node. Im Folgenden implementieren wir auch gleich eine Methode isEmpty, die überpru ̈ft, ob die Liste leer ist.';
+var $author$project$SLL$Descriptions$sllist = '\npublic class SLList<T> implements List<T> {\n    privat Node<T> head;\n\n    public SLLList() {\n        this.head = null;\n    }\n\n    public boolean isEmpty() {\n        return this.head == null;\n    }\n}\n';
+var $author$project$SLL$Descriptions$thirdText = 'Die generische Klasse SLList<T> implementiert eine einfach verkettete Liste. Die Definition von generischen Typen wurde zur Programmiersprachen Java im Nachhinein hinzugefügt. Aus Gründen der Abwärtskompatibilität wird der Typ der Elemente eines Arrays daher anders angegeben als der Typ der Elemente einer Liste. Bereits vor der Einführung von generischen Typen, konnten in der Programmiersprachen Java bereits verschiedene Typen von Arrays definiert werden. Als die generischen Klassen zur Programmiersprache Java hinzugefügt wurden, wurde die bereits bestehende Schreibweise für die Arrays erhalten. Um die Methoden get, add und remove zu implementieren, implementieren wir eine Hilfsmethode, die das Node-Objekt an einer bestimmten Stelle in der Liste heraussucht.';
 var $author$project$SVG$Arrows$NO = {$: 'NO'};
 var $author$project$SLL$InitGameStats$withExtraNode = {
 	extraNode: $elm$core$Maybe$Just(
@@ -5569,6 +5579,14 @@ var $author$project$Main$init = _Utils_Tuple2(
 				$author$project$Model$SLL(
 				_List_fromArray(
 					[
+						$author$project$Model$HEADING1('Single Linked List'),
+						$author$project$Model$DESCRIPTION($author$project$SLL$Descriptions$firstText),
+						A3($author$project$Model$CODE, $author$project$SLL$Descriptions$node, $elm$core$Maybe$Nothing, 1),
+						$author$project$Model$DESCRIPTION($author$project$SLL$Descriptions$secondText),
+						A3($author$project$Model$CODE, $author$project$SLL$Descriptions$sllist, $elm$core$Maybe$Nothing, 1),
+						$author$project$Model$DESCRIPTION($author$project$SLL$Descriptions$thirdText),
+						A3($author$project$Model$CODE, $author$project$SLL$Descriptions$getNodeAt, $elm$core$Maybe$Nothing, 1),
+						$author$project$Model$HEADING2('GET'),
 						A3(
 						$author$project$Model$CODE,
 						$author$project$SLL$Descriptions$sllist,
@@ -5577,8 +5595,8 @@ var $author$project$Main$init = _Utils_Tuple2(
 								$author$project$Model$GET,
 								$author$project$SLL$InitGameStats$noExtraNode,
 								$author$project$SLL$Model$FindGetNode(100))),
-						1),
-						$author$project$Model$DESCRIPTION($author$project$SLL$Descriptions$desciptionText),
+						2),
+						$author$project$Model$HEADING2('REMOVE'),
 						A3(
 						$author$project$Model$CODE,
 						$author$project$SLL$Descriptions$removeNode,
@@ -5587,13 +5605,16 @@ var $author$project$Main$init = _Utils_Tuple2(
 								$author$project$Model$REMOVE,
 								$author$project$SLL$InitGameStats$noExtraNode,
 								$author$project$SLL$Model$FindRemoveNode(100))),
-						2),
+						3),
+						$author$project$Model$HEADING2('ADD'),
 						A3(
 						$author$project$Model$CODE,
 						$author$project$SLL$Descriptions$addNode,
 						$elm$core$Maybe$Just(
 							A2($author$project$Model$ADD, $author$project$SLL$InitGameStats$withExtraNode, $author$project$SLL$Model$MoveExtra)),
-						3)
+						4),
+						$author$project$Model$HEADING1('Double Linked List'),
+						$author$project$Model$HEADING1('Tree')
 					]))
 			]),
 		_List_Nil,
@@ -7372,27 +7393,32 @@ var $author$project$Main$updateMatchingMethodAnimation = F2(
 						A2(
 							$elm$core$List$map,
 							function (section) {
-								if (section.$ === 'CODE') {
-									var codePrev = section.a;
-									var mMethodAnimation = section.b;
-									var identifyerValue = section.c;
-									if (A2($elm$core$List$member, identifyerValue, identifyerTargetList)) {
-										if (mMethodAnimation.$ === 'Just') {
-											var methodAnimation = mMethodAnimation.a;
-											return A3(
-												$author$project$Model$CODE,
-												codePrev,
-												$elm$core$Maybe$Just(
-													updateFunc(methodAnimation)),
-												identifyerValue);
+								switch (section.$) {
+									case 'CODE':
+										var codePrev = section.a;
+										var mMethodAnimation = section.b;
+										var identifyerValue = section.c;
+										if (A2($elm$core$List$member, identifyerValue, identifyerTargetList)) {
+											if (mMethodAnimation.$ === 'Just') {
+												var methodAnimation = mMethodAnimation.a;
+												return A3(
+													$author$project$Model$CODE,
+													codePrev,
+													$elm$core$Maybe$Just(
+														updateFunc(methodAnimation)),
+													identifyerValue);
+											} else {
+												return section;
+											}
 										} else {
 											return section;
 										}
-									} else {
+									case 'DESCRIPTION':
 										return section;
-									}
-								} else {
-									return section;
+									case 'HEADING1':
+										return section;
+									default:
+										return section;
 								}
 							},
 							sectionList));
@@ -13803,6 +13829,10 @@ var $pablohirafuji$elm_syntax_highlight$SyntaxHighlight$Theme$Type$toCss = funct
 var $pablohirafuji$elm_syntax_highlight$SyntaxHighlight$Theme$GitHub$css = $pablohirafuji$elm_syntax_highlight$SyntaxHighlight$Theme$Type$toCss($pablohirafuji$elm_syntax_highlight$SyntaxHighlight$Theme$GitHub$theme);
 var $pablohirafuji$elm_syntax_highlight$SyntaxHighlight$Theme$gitHub = $pablohirafuji$elm_syntax_highlight$SyntaxHighlight$Theme$GitHub$css;
 var $pablohirafuji$elm_syntax_highlight$SyntaxHighlight$gitHub = $pablohirafuji$elm_syntax_highlight$SyntaxHighlight$Theme($pablohirafuji$elm_syntax_highlight$SyntaxHighlight$Theme$gitHub);
+var $mdgriffith$elm_ui$Internal$Model$Heading = function (a) {
+	return {$: 'Heading', a: a};
+};
+var $mdgriffith$elm_ui$Element$Region$heading = A2($elm$core$Basics$composeL, $mdgriffith$elm_ui$Internal$Model$Describe, $mdgriffith$elm_ui$Internal$Model$Heading);
 var $elm$core$Basics$always = F2(
 	function (a, _v0) {
 		return a;
@@ -15864,6 +15894,57 @@ var $mdgriffith$elm_ui$Element$Border$rounded = function (radius) {
 var $author$project$View$roundedCornerConst = 5;
 var $mdgriffith$elm_ui$Internal$Flag$borderStyle = $mdgriffith$elm_ui$Internal$Flag$flag(11);
 var $mdgriffith$elm_ui$Element$Border$solid = A2($mdgriffith$elm_ui$Internal$Model$Class, $mdgriffith$elm_ui$Internal$Flag$borderStyle, $mdgriffith$elm_ui$Internal$Style$classes.borderSolid);
+var $mdgriffith$elm_ui$Element$Font$color = function (fontColor) {
+	return A2(
+		$mdgriffith$elm_ui$Internal$Model$StyleClass,
+		$mdgriffith$elm_ui$Internal$Flag$fontColor,
+		A3(
+			$mdgriffith$elm_ui$Internal$Model$Colored,
+			'fc-' + $mdgriffith$elm_ui$Internal$Model$formatColorClass(fontColor),
+			'color',
+			fontColor));
+};
+var $mdgriffith$elm_ui$Element$Font$family = function (families) {
+	return A2(
+		$mdgriffith$elm_ui$Internal$Model$StyleClass,
+		$mdgriffith$elm_ui$Internal$Flag$fontFamily,
+		A2(
+			$mdgriffith$elm_ui$Internal$Model$FontFamily,
+			A3($elm$core$List$foldl, $mdgriffith$elm_ui$Internal$Model$renderFontClassName, 'ff-', families),
+			families));
+};
+var $mdgriffith$elm_ui$Element$Font$sansSerif = $mdgriffith$elm_ui$Internal$Model$SansSerif;
+var $elm$core$Basics$pow = _Basics_pow;
+var $mdgriffith$elm_ui$Element$modular = F3(
+	function (normal, ratio, rescale) {
+		return (!rescale) ? normal : ((rescale < 0) ? (normal * A2($elm$core$Basics$pow, ratio, rescale)) : (normal * A2($elm$core$Basics$pow, ratio, rescale - 1)));
+	});
+var $author$project$View$scaled = function (fSize) {
+	return $elm$core$Basics$round(
+		A3($mdgriffith$elm_ui$Element$modular, 16, 1.25, fSize));
+};
+var $mdgriffith$elm_ui$Element$Font$size = function (i) {
+	return A2(
+		$mdgriffith$elm_ui$Internal$Model$StyleClass,
+		$mdgriffith$elm_ui$Internal$Flag$fontSize,
+		$mdgriffith$elm_ui$Internal$Model$FontSize(i));
+};
+var $mdgriffith$elm_ui$Element$Font$typeface = $mdgriffith$elm_ui$Internal$Model$Typeface;
+var $author$project$View$stdFont = F2(
+	function (size, colorScheme) {
+		return _List_fromArray(
+			[
+				$mdgriffith$elm_ui$Element$Font$color(colorScheme.contrastOne),
+				$mdgriffith$elm_ui$Element$Font$size(
+				$author$project$View$scaled(size)),
+				$mdgriffith$elm_ui$Element$Font$family(
+				_List_fromArray(
+					[
+						$mdgriffith$elm_ui$Element$Font$typeface('Open Sans'),
+						$mdgriffith$elm_ui$Element$Font$sansSerif
+					]))
+			]);
+	});
 var $elm$svg$Svg$svg = $elm$svg$Svg$trustedNode('svg');
 var $mdgriffith$elm_ui$Element$text = function (content) {
 	return $mdgriffith$elm_ui$Internal$Model$Text(content);
@@ -16492,16 +16573,6 @@ var $mdgriffith$elm_ui$Element$alpha = function (o) {
 			transparency));
 };
 var $mdgriffith$elm_ui$Element$Input$charcoal = A3($mdgriffith$elm_ui$Element$rgb, 136 / 255, 138 / 255, 133 / 255);
-var $mdgriffith$elm_ui$Element$Font$color = function (fontColor) {
-	return A2(
-		$mdgriffith$elm_ui$Internal$Model$StyleClass,
-		$mdgriffith$elm_ui$Internal$Flag$fontColor,
-		A3(
-			$mdgriffith$elm_ui$Internal$Model$Colored,
-			'fc-' + $mdgriffith$elm_ui$Internal$Model$formatColorClass(fontColor),
-			'color',
-			fontColor));
-};
 var $mdgriffith$elm_ui$Element$rgba = $mdgriffith$elm_ui$Internal$Model$Rgba;
 var $mdgriffith$elm_ui$Element$Input$renderPlaceholder = F3(
 	function (_v0, forPlaceholder, on) {
@@ -17143,120 +17214,151 @@ var $author$project$View$createContentLayout = F4(
 								$author$project$SVG$SLL$SLLNodes$printAllNodes(nodeList)))));
 			});
 		var formatSection = function (section) {
-			if (section.$ === 'CODE') {
-				var codeString = section.a;
-				var mAnimation = section.b;
-				var identity = section.c;
-				return codeSectionFormatElem(
-					function () {
-						if (mAnimation.$ === 'Just') {
-							var animation = mAnimation.a;
-							switch (animation.$) {
-								case 'GET':
-									var nodeList = animation.a.nodeList;
-									var extraNode = animation.a.extraNode;
-									var index = animation.a.index;
-									return _List_fromArray(
-										[
-											A2(
-											displayCode,
-											_List_fromArray(
-												[
-													$mdgriffith$elm_ui$Element$width(
-													$mdgriffith$elm_ui$Element$fillPortion(1))
-												]),
-											codeString),
-											A5(
-											displayCodeAnimation,
-											_List_fromArray(
-												[
-													$mdgriffith$elm_ui$Element$width(
-													$mdgriffith$elm_ui$Element$fillPortion(1))
-												]),
-											nodeList,
-											extraNode,
-											index,
-											identity)
-										]);
-								case 'ADD':
-									var nodeList = animation.a.nodeList;
-									var extraNode = animation.a.extraNode;
-									var index = animation.a.index;
-									return _List_fromArray(
-										[
-											A2(
-											displayCode,
-											_List_fromArray(
-												[
-													$mdgriffith$elm_ui$Element$width(
-													$mdgriffith$elm_ui$Element$fillPortion(1))
-												]),
-											codeString),
-											A5(
-											displayCodeAnimation,
-											_List_fromArray(
-												[
-													$mdgriffith$elm_ui$Element$width(
-													$mdgriffith$elm_ui$Element$fillPortion(1))
-												]),
-											nodeList,
-											extraNode,
-											index,
-											identity)
-										]);
-								default:
-									var nodeList = animation.a.nodeList;
-									var extraNode = animation.a.extraNode;
-									var index = animation.a.index;
-									return _List_fromArray(
-										[
-											A2(
-											displayCode,
-											_List_fromArray(
-												[
-													$mdgriffith$elm_ui$Element$width(
-													$mdgriffith$elm_ui$Element$fillPortion(1))
-												]),
-											codeString),
-											A5(
-											displayCodeAnimation,
-											_List_fromArray(
-												[
-													$mdgriffith$elm_ui$Element$width(
-													$mdgriffith$elm_ui$Element$fillPortion(1))
-												]),
-											nodeList,
-											extraNode,
-											index,
-											identity)
-										]);
-							}
-						} else {
-							return _List_fromArray(
-								[
-									A2(
-									$mdgriffith$elm_ui$Element$el,
-									_List_Nil,
-									A2(
-										displayCode,
-										_List_fromArray(
+			switch (section.$) {
+				case 'CODE':
+					var codeString = section.a;
+					var mAnimation = section.b;
+					var identity = section.c;
+					return codeSectionFormatElem(
+						function () {
+							if (mAnimation.$ === 'Just') {
+								var animation = mAnimation.a;
+								switch (animation.$) {
+									case 'GET':
+										var nodeList = animation.a.nodeList;
+										var extraNode = animation.a.extraNode;
+										var index = animation.a.index;
+										return _List_fromArray(
 											[
-												$mdgriffith$elm_ui$Element$width(
-												$mdgriffith$elm_ui$Element$fillPortion(1))
-											]),
-										codeString))
-								]);
-						}
-					}());
-			} else {
-				var descriptionText = section.a;
-				return A2(
-					$mdgriffith$elm_ui$Element$paragraph,
-					_List_Nil,
-					_List_fromArray(
-						[
-							$mdgriffith$elm_ui$Element$text(descriptionText)
-						]));
+												A2(
+												displayCode,
+												_List_fromArray(
+													[
+														$mdgriffith$elm_ui$Element$width(
+														$mdgriffith$elm_ui$Element$fillPortion(1))
+													]),
+												codeString),
+												A5(
+												displayCodeAnimation,
+												_List_fromArray(
+													[
+														$mdgriffith$elm_ui$Element$width(
+														$mdgriffith$elm_ui$Element$fillPortion(1))
+													]),
+												nodeList,
+												extraNode,
+												index,
+												identity)
+											]);
+									case 'ADD':
+										var nodeList = animation.a.nodeList;
+										var extraNode = animation.a.extraNode;
+										var index = animation.a.index;
+										return _List_fromArray(
+											[
+												A2(
+												displayCode,
+												_List_fromArray(
+													[
+														$mdgriffith$elm_ui$Element$width(
+														$mdgriffith$elm_ui$Element$fillPortion(1))
+													]),
+												codeString),
+												A5(
+												displayCodeAnimation,
+												_List_fromArray(
+													[
+														$mdgriffith$elm_ui$Element$width(
+														$mdgriffith$elm_ui$Element$fillPortion(1))
+													]),
+												nodeList,
+												extraNode,
+												index,
+												identity)
+											]);
+									default:
+										var nodeList = animation.a.nodeList;
+										var extraNode = animation.a.extraNode;
+										var index = animation.a.index;
+										return _List_fromArray(
+											[
+												A2(
+												displayCode,
+												_List_fromArray(
+													[
+														$mdgriffith$elm_ui$Element$width(
+														$mdgriffith$elm_ui$Element$fillPortion(1))
+													]),
+												codeString),
+												A5(
+												displayCodeAnimation,
+												_List_fromArray(
+													[
+														$mdgriffith$elm_ui$Element$width(
+														$mdgriffith$elm_ui$Element$fillPortion(1))
+													]),
+												nodeList,
+												extraNode,
+												index,
+												identity)
+											]);
+								}
+							} else {
+								return _List_fromArray(
+									[
+										A2(
+										$mdgriffith$elm_ui$Element$el,
+										_List_Nil,
+										A2(
+											displayCode,
+											_List_fromArray(
+												[
+													$mdgriffith$elm_ui$Element$width(
+													$mdgriffith$elm_ui$Element$fillPortion(1))
+												]),
+											codeString))
+									]);
+							}
+						}());
+				case 'DESCRIPTION':
+					var descriptionText = section.a;
+					return A2(
+						$mdgriffith$elm_ui$Element$paragraph,
+						_List_Nil,
+						_List_fromArray(
+							[
+								$mdgriffith$elm_ui$Element$text(descriptionText)
+							]));
+				case 'HEADING1':
+					var headingText = section.a;
+					return A2(
+						$mdgriffith$elm_ui$Element$paragraph,
+						_Utils_ap(
+							A2($author$project$View$stdFont, 4, $author$project$Color$ColorScheme$dayColorScheme),
+							_List_fromArray(
+								[
+									$mdgriffith$elm_ui$Element$Region$heading(1),
+									$mdgriffith$elm_ui$Element$padding(10)
+								])),
+						_List_fromArray(
+							[
+								$mdgriffith$elm_ui$Element$text(headingText)
+							]));
+				default:
+					var headingText = section.a;
+					return A2(
+						$mdgriffith$elm_ui$Element$paragraph,
+						_Utils_ap(
+							A2($author$project$View$stdFont, 3, $author$project$Color$ColorScheme$dayColorScheme),
+							_List_fromArray(
+								[
+									$mdgriffith$elm_ui$Element$Region$heading(2),
+									$mdgriffith$elm_ui$Element$padding(10)
+								])),
+						_List_fromArray(
+							[
+								$mdgriffith$elm_ui$Element$text(headingText)
+							]));
 			}
 		};
 		switch (dataStruc.$) {
@@ -17329,10 +17431,6 @@ var $author$project$View$footer = F2(
 				attr),
 			$mdgriffith$elm_ui$Element$text('Footer'));
 	});
-var $mdgriffith$elm_ui$Internal$Model$Heading = function (a) {
-	return {$: 'Heading', a: a};
-};
-var $mdgriffith$elm_ui$Element$Region$heading = A2($elm$core$Basics$composeL, $mdgriffith$elm_ui$Internal$Model$Describe, $mdgriffith$elm_ui$Internal$Model$Heading);
 var $author$project$View$header = F2(
 	function (attr, colorScheme) {
 		return A2(
